@@ -27,8 +27,7 @@ export interface NoblePhantasmEffect {
     targetTrait?: ServantTrait;
 }
 
-export enum NoblePhantasmTargets {
-    SingleTarget,
-    AreaOfEffect,
-    None
-}
+export type NoblePhantasmTargets =
+    'SingleTarget' |
+    'AreaOfEffect' |
+    'None'

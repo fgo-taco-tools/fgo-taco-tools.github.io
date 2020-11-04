@@ -1,6 +1,6 @@
 import { NoblePhantasm } from './NoblePhantasm';
 import {
-  ServantRarity, ServantAttribute, ServantClass, ServantTrait, ServantCards, MaterialAmount,
+  ServantRarity, ServantAttribute, ServantAllClass, ServantTrait, ServantCards, MaterialAmount,
 } from './ServantMiscTypes';
 import { PassiveSkill, ActiveSkill } from './Skills';
 import { Percent } from './Percent';
@@ -9,7 +9,7 @@ export interface ServantStaticData {
     id: number;
     name: string;
     rarity: ServantRarity;
-    class: ServantClass;
+    class: ServantAllClass;
     baseAtk: number;
     baseHp: number;
     maxAtk: number;

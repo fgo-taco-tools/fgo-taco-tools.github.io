@@ -1,32 +1,26 @@
-import { Silver, Gold, Bronze } from '@/models/Material';
-import { NoblePhantasmTargets } from '@/models/NoblePhantasm';
 import { Percent } from '@/models/Percent';
-import {
-  ServantRarity, ServantClass, ServantAttribute, ServantTrait, CardType,
-} from '@/models/ServantMiscTypes';
 import { ServantStaticData } from '@/models/ServantStaticData';
-import { SkillEffectType, SkillEffectTarget } from '@/models/Skills';
 
 export const s222: ServantStaticData = {
   id: 222,
   name: 'Mysterious Heroine XX',
-  rarity: ServantRarity.SuperRare,
-  class: ServantClass.Foreigner,
+  rarity: 'SuperRare',
+  class: 'Foreigner',
   baseAtk: 1625,
   baseHp: 1800,
   maxAtk: 9751,
   maxHp: 11250,
-  attribute: ServantAttribute.Star,
+  attribute: 'Star',
   traits: [
-    ServantTrait.Arthur,
-    ServantTrait.BrynhildrsBeloved,
-    ServantTrait.Dragon,
-    ServantTrait.Female,
-    ServantTrait.Humanoid,
-    ServantTrait.King,
-    ServantTrait.Riding,
-    ServantTrait.Saberface,
-    ServantTrait.Servant,
+    'Arthur',
+    'BrynhildrsBeloved',
+    'Dragon',
+    'Female',
+    'Humanoid',
+    'King',
+    'Riding',
+    'Saberface',
+    'Servant',
   ],
   npPerHit: 0.64,
   npWhenAttacked: 3,
@@ -37,11 +31,11 @@ export const s222: ServantStaticData = {
       name: 'Entity of the Outer Realm D',
       effect: [
         {
-          type: SkillEffectType.GainCritStars,
+          type: 'GainCritStars',
           amount: 2,
         },
         {
-          type: SkillEffectType.IncreaseDebuffResist,
+          type: 'IncreaseDebuffResist',
           amount: new Percent(4),
         },
       ],
@@ -50,7 +44,7 @@ export const s222: ServantStaticData = {
       name: 'Cosmo Reactor B',
       effect: [
         {
-          type: SkillEffectType.IncreaseCritStarDropRate,
+          type: 'IncreaseCritStarDropRate',
           amount: new Percent(8),
         },
       ],
@@ -59,7 +53,7 @@ export const s222: ServantStaticData = {
       name: 'Independent Action A',
       effect: [
         {
-          type: SkillEffectType.IncreaseCritStrength,
+          type: 'IncreaseCritStrength',
           amount: new Percent(10),
         },
       ],
@@ -68,7 +62,7 @@ export const s222: ServantStaticData = {
       name: 'Riding A',
       effect: [
         {
-          type: SkillEffectType.QuickCardEffectiveness,
+          type: 'QuickCardEffectiveness',
           amount: new Percent(10),
         },
       ],
@@ -79,8 +73,8 @@ export const s222: ServantStaticData = {
     initialCooldown: 7,
     effects: [
       {
-        type: SkillEffectType.Invincible,
-        target: SkillEffectTarget.Self,
+        type: 'Invincible',
+        target: 'Self',
         minAmount: 0,
         stepAmount: 0,
         maxAmount: 0,
@@ -90,8 +84,8 @@ export const s222: ServantStaticData = {
         },
       },
       {
-        type: SkillEffectType.AttackUp,
-        target: SkillEffectTarget.Self,
+        type: 'AttackUp',
+        target: 'Self',
         minAmount: new Percent(30),
         stepAmount: new Percent(2),
         maxAmount: new Percent(50),
@@ -107,8 +101,8 @@ export const s222: ServantStaticData = {
     initialCooldown: 6,
     effects: [
       {
-        type: SkillEffectType.GainCritStars,
-        target: SkillEffectTarget.Self,
+        type: 'GainCritStars',
+        target: 'Self',
         minAmount: 10,
         stepAmount: 1,
         maxAmount: 20,
@@ -118,8 +112,8 @@ export const s222: ServantStaticData = {
         },
       },
       {
-        type: SkillEffectType.DecreaseCritStarGatherRate,
-        target: SkillEffectTarget.Self,
+        type: 'DecreaseCritStarGatherRate',
+        target: 'Self',
         minAmount: new Percent(50),
         stepAmount: new Percent(5),
         maxAmount: new Percent(100),
@@ -135,8 +129,8 @@ export const s222: ServantStaticData = {
     initialCooldown: 7,
     effects: [
       {
-        type: SkillEffectType.IgnoreInvincible,
-        target: SkillEffectTarget.Self,
+        type: 'IgnoreInvincible',
+        target: 'Self',
         minAmount: 0,
         stepAmount: 0,
         maxAmount: 0,
@@ -146,8 +140,8 @@ export const s222: ServantStaticData = {
         },
       },
       {
-        type: SkillEffectType.NpGain,
-        target: SkillEffectTarget.Self,
+        type: 'NpGain',
+        target: 'Self',
         minAmount: 20,
         stepAmount: 1,
         maxAmount: 30,
@@ -157,12 +151,12 @@ export const s222: ServantStaticData = {
         },
       },
       {
-        type: SkillEffectType.SpecialAttack,
-        target: SkillEffectTarget.Self,
+        type: 'SpecialAttack',
+        target: 'Self',
         minAmount: new Percent(30),
         stepAmount: new Percent(2),
         maxAmount: new Percent(50),
-        targetTrait: ServantTrait.ThreatToHumanity,
+        targetTrait: 'ThreatToHumanity',
         duration: {
           times: 'None',
           turns: 1,
@@ -171,17 +165,17 @@ export const s222: ServantStaticData = {
     ],
   },
   noblePhantasm: {
-    cardType: CardType.Arts,
+    cardType: 'Arts',
     name: 'Etherspace, Yet Lawful EX',
     minDamagePlus: new Percent(900),
     maxDamagePlus: new Percent(1500),
     numOfHits: 4,
-    targets: NoblePhantasmTargets.SingleTarget,
+    targets: 'SingleTarget',
     effects: [
       {
-        type: SkillEffectType.SpecialAttack,
-        target: SkillEffectTarget.Self,
-        targetTrait: ServantTrait.Saber,
+        type: 'SpecialAttack',
+        target: 'Self',
+        targetTrait: 'Saber',
         amount1: new Percent(150),
         amount2: new Percent(150),
         amount3: new Percent(150),
@@ -195,8 +189,8 @@ export const s222: ServantStaticData = {
     ],
     overchargeEffects: [
       {
-        type: SkillEffectType.AttackUp,
-        target: SkillEffectTarget.Self,
+        type: 'AttackUp',
+        target: 'Self',
         amount1: new Percent(20),
         amount2: new Percent(30),
         amount3: new Percent(40),
@@ -220,20 +214,20 @@ export const s222: ServantStaticData = {
   },
   instantDeathChance: 10,
   ascensionMats: [
-    [[Bronze.DragonFang, 8], [Silver.EternalGear, 8]],
-    [[Gold.BlackBeastGrease, 8], [Silver.GreatKnightMedal, 8]],
-    [[Gold.TearstoneOfBlood, 8], [Silver.GiantsRing, 8]],
-    [[Gold.DragonsReverseScale, 8], [Gold.PrimordialLanugo, 8]],
+    [['DragonFang', 8], ['EternalGear', 8]],
+    [['BlackBeastGrease', 8], ['GreatKnightMedal', 8]],
+    [['TearstoneOfBlood', 8], ['GiantsRing', 8]],
+    [['DragonsReverseScale', 8], ['PrimordialLanugo', 8]],
   ],
   skillMats: [
-    [[Bronze.ProofOfHero, 8]],
-    [[Bronze.DragonFang, 8]],
-    [[Silver.EternalGear, 8]],
-    [[Silver.GreatKnightMedal, 10]],
-    [[Silver.AuroraSteel, 10]],
-    [[Silver.GiantsRing, 12]],
-    [[Gold.PrimordialLanugo, 12]],
-    [[Gold.DragonsReverseScale, 12]],
+    [['ProofOfHero', 8]],
+    [['DragonFang', 8]],
+    [['EternalGear', 8]],
+    [['GreatKnightMedal', 10]],
+    [['AuroraSteel', 10]],
+    [['GiantsRing', 12]],
+    [['PrimordialLanugo', 12]],
+    [['DragonsReverseScale', 12]],
   ],
   upgrades: [],
 };

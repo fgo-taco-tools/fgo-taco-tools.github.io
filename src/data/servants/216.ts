@@ -1,28 +1,22 @@
-import { Silver, Gold } from '@/models/Material';
-import { NoblePhantasmTargets } from '@/models/NoblePhantasm';
 import { Percent } from '@/models/Percent';
-import {
-  ServantRarity, ServantClass, ServantAttribute, ServantTrait, CardType, BattlefieldType,
-} from '@/models/ServantMiscTypes';
 import { ServantStaticData } from '@/models/ServantStaticData';
-import { SkillEffectType, SkillEffectTarget } from '@/models/Skills';
 
 export const s216: ServantStaticData = {
   id: 216,
   name: 'Jeanne d\'Arc (Archer)',
-  rarity: ServantRarity.SuperSuperRare,
-  class: ServantClass.Archer,
+  rarity: 'SuperSuperRare',
+  class: 'Archer',
   baseAtk: 1626,
   baseHp: 2309,
   maxAtk: 10525,
   maxHp: 15743,
-  attribute: ServantAttribute.Man,
+  attribute: 'Man',
   traits: [
-    ServantTrait.Female,
-    ServantTrait.Humanoid,
-    ServantTrait.Saberface,
-    ServantTrait.Servant,
-    ServantTrait.WeakToEnumaElish,
+    'Female',
+    'Humanoid',
+    'Saberface',
+    'Servant',
+    'WeakToEnumaElish',
   ],
   npPerHit: 0.68,
   npWhenAttacked: 3,
@@ -32,7 +26,7 @@ export const s216: ServantStaticData = {
     {
       name: 'Magic Resistance B',
       effect: [{
-        type: SkillEffectType.IncreaseDebuffResist,
+        type: 'IncreaseDebuffResist',
         amount: new Percent(17.5),
       }],
     },
@@ -40,13 +34,13 @@ export const s216: ServantStaticData = {
       name: 'Independent Action (Celeb) EX ',
       effect: [
         {
-          type: SkillEffectType.IncreaseCritStrength,
+          type: 'IncreaseCritStrength',
           amount: new Percent(10),
         },
         {
-          type: SkillEffectType.NpGaugeUp,
+          type: 'NpGaugeUp',
           amount: 3,
-          battlefield: BattlefieldType.Waterside,
+          battlefield: 'Waterside',
         },
       ],
     },
@@ -56,8 +50,8 @@ export const s216: ServantStaticData = {
     initialCooldown: 7,
     effects: [
       {
-        type: SkillEffectType.ArtsEffectivenessUp,
-        target: SkillEffectTarget.Self,
+        type: 'ArtsEffectivenessUp',
+        target: 'Self',
         minAmount: new Percent(20),
         stepAmount: new Percent(1),
         maxAmount: new Percent(30),
@@ -67,8 +61,8 @@ export const s216: ServantStaticData = {
         },
       },
       {
-        type: SkillEffectType.Invincible,
-        target: SkillEffectTarget.Self,
+        type: 'Invincible',
+        target: 'Self',
         minAmount: 0,
         stepAmount: 0,
         maxAmount: 0,
@@ -84,8 +78,8 @@ export const s216: ServantStaticData = {
     initialCooldown: 8,
     effects: [
       {
-        type: SkillEffectType.NpGaugeUp,
-        target: SkillEffectTarget.Self,
+        type: 'NpGaugeUp',
+        target: 'Self',
         minAmount: 20,
         stepAmount: 2,
         maxAmount: 40,
@@ -95,8 +89,8 @@ export const s216: ServantStaticData = {
         },
       },
       {
-        type: SkillEffectType.NpDamageUp,
-        target: SkillEffectTarget.Self,
+        type: 'NpDamageUp',
+        target: 'Self',
         minAmount: new Percent(10),
         stepAmount: new Percent(1),
         maxAmount: new Percent(20),
@@ -106,8 +100,8 @@ export const s216: ServantStaticData = {
         },
       },
       {
-        type: SkillEffectType.IncreaseCritStrength,
-        target: SkillEffectTarget.Self,
+        type: 'IncreaseCritStrength',
+        target: 'Self',
         minAmount: new Percent(30),
         stepAmount: new Percent(2),
         maxAmount: new Percent(50),
@@ -115,7 +109,7 @@ export const s216: ServantStaticData = {
           times: 'None',
           turns: 3,
         },
-        battlefield: BattlefieldType.Waterside,
+        battlefield: 'Waterside',
       },
     ],
   },
@@ -124,8 +118,8 @@ export const s216: ServantStaticData = {
     initialCooldown: 7,
     effects: [
       {
-        type: SkillEffectType.AttackUp,
-        target: SkillEffectTarget.AllAllies,
+        type: 'AttackUp',
+        target: 'AllAllies',
         minAmount: new Percent(10),
         stepAmount: new Percent(1),
         maxAmount: new Percent(20),
@@ -135,12 +129,12 @@ export const s216: ServantStaticData = {
         },
       },
       {
-        type: SkillEffectType.AttackUp,
-        target: SkillEffectTarget.AllAlliesExceptSelf,
+        type: 'AttackUp',
+        target: 'AllAlliesExceptSelf',
         minAmount: new Percent(10),
         stepAmount: new Percent(1),
         maxAmount: new Percent(20),
-        targetTrait: ServantTrait.Good,
+        targetTrait: 'Good',
         duration: {
           times: 'None',
           turns: 3,
@@ -149,18 +143,18 @@ export const s216: ServantStaticData = {
     ],
   },
   noblePhantasm: {
-    cardType: CardType.Arts,
+    cardType: 'Arts',
     name: 'Des Océans d\'Allégresse',
     minDamagePlus: new Percent(450),
     maxDamagePlus: new Percent(750),
     numOfHits: 4,
-    targets: NoblePhantasmTargets.AreaOfEffect,
+    targets: 'AreaOfEffect',
     effects: [
     ],
     overchargeEffects: [
       {
-        type: SkillEffectType.GainCritStars,
-        target: SkillEffectTarget.Self,
+        type: 'GainCritStars',
+        target: 'Self',
         amount1: 10,
         amount2: 15,
         amount3: 20,
@@ -185,19 +179,19 @@ export const s216: ServantStaticData = {
   instantDeathChance: 24.5,
   ascensionMats: [
     [],
-    [[Silver.EternalIce, 8]],
-    [[Silver.ShellOfReminiscence, 10], [Silver.AuroraSteel, 5]],
-    [[Silver.AuroraSteel, 10], [Gold.ScarabOfWisdom, 5]],
+    [['EternalIce', 8]],
+    [['ShellOfReminiscence', 10], ['AuroraSteel', 5]],
+    [['AuroraSteel', 10], ['ScarabOfWisdom', 5]],
   ],
   skillMats: [
     [],
     [],
     [],
-    [[Silver.ShellOfReminiscence, 5]],
-    [[Silver.ShellOfReminiscence, 10]],
-    [[Silver.EternalIce, 5]],
-    [[Silver.EternalIce, 10], [Silver.PhoenixFeather, 5]],
-    [[Silver.PhoenixFeather, 15], [Gold.MysteriousDivineWine, 10]],
+    [['ShellOfReminiscence', 5]],
+    [['ShellOfReminiscence', 10]],
+    [['EternalIce', 5]],
+    [['EternalIce', 10], ['PhoenixFeather', 5]],
+    [['PhoenixFeather', 15], ['MysteriousDivineWine', 10]],
   ],
   upgrades: [],
 };

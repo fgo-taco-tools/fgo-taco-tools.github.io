@@ -1,20 +1,12 @@
-import { NoblePhantasmTargets } from '@/models/NoblePhantasm';
-import {
-  CardType, ServantAttribute, ServantClass, ServantRarity, ServantTrait,
-} from '@/models/ServantMiscTypes';
 import { ServantStaticData, ServantUpgrades } from '@/models/ServantStaticData';
-import { SkillEffectTarget, SkillEffectType } from '@/models/Skills';
 import { Percent } from '@/models/Percent';
-import {
-  Bronze, Gold, Silver,
-} from '@/models/Material';
 
 const clearCamelot15: ServantUpgrades = {
   name: 'Clear Camelot 15-1',
   changes(mashu: ServantStaticData): ServantStaticData {
     return {
       ...mashu,
-      rarity: ServantRarity.SuperRare,
+      rarity: 'SuperRare',
       maxAtk: 8730,
       maxHp: 12877,
       activeSkill1: {
@@ -22,8 +14,8 @@ const clearCamelot15: ServantUpgrades = {
         initialCooldown: 7,
         effects: [
           {
-            type: SkillEffectType.IncreaseDefense,
-            target: SkillEffectTarget.AllAllies,
+            type: 'IncreaseDefense',
+            target: 'AllAllies',
             minAmount: new Percent(15),
             stepAmount: new Percent(0.5),
             maxAmount: new Percent(20),
@@ -33,8 +25,8 @@ const clearCamelot15: ServantUpgrades = {
             },
           },
           {
-            type: SkillEffectType.IncomingDamageCut,
-            target: SkillEffectTarget.AllAllies,
+            type: 'IncomingDamageCut',
+            target: 'AllAllies',
             minAmount: 2000,
             stepAmount: 0,
             maxAmount: 2000,
@@ -60,8 +52,8 @@ const clearCamelot17: ServantUpgrades = {
         effects: [
           ...mashu.noblePhantasm.effects,
           {
-            type: SkillEffectType.AttackUp,
-            target: SkillEffectTarget.AllAlliesExceptSelf,
+            type: 'AttackUp',
+            target: 'AllAlliesExceptSelf',
             amount1: new Percent(30),
             amount2: new Percent(30),
             amount3: new Percent(30),
@@ -88,8 +80,8 @@ const ortinax: ServantUpgrades = {
         initialCooldown: 6,
         effects: [
           {
-            type: SkillEffectType.BusterEffectivenessUp,
-            target: SkillEffectTarget.Self,
+            type: 'BusterEffectivenessUp',
+            target: 'Self',
             minAmount: new Percent(30),
             stepAmount: new Percent(2),
             maxAmount: new Percent(50),
@@ -99,8 +91,8 @@ const ortinax: ServantUpgrades = {
             },
           },
           {
-            type: SkillEffectType.BusterCritDamageUp,
-            target: SkillEffectTarget.Self,
+            type: 'BusterCritDamageUp',
+            target: 'Self',
             minAmount: new Percent(30),
             stepAmount: new Percent(2),
             maxAmount: new Percent(50),
@@ -116,8 +108,8 @@ const ortinax: ServantUpgrades = {
         initialCooldown: 7,
         effects: [
           {
-            type: SkillEffectType.TargetFocus,
-            target: SkillEffectTarget.Self,
+            type: 'TargetFocus',
+            target: 'Self',
             minAmount: 1,
             maxAmount: 1,
             duration: {
@@ -126,8 +118,8 @@ const ortinax: ServantUpgrades = {
             },
           },
           {
-            type: SkillEffectType.NpGaugeUp,
-            target: SkillEffectTarget.TargetAlly,
+            type: 'NpGaugeUp',
+            target: 'TargetAlly',
             minAmount: 10,
             stepAmount: 1,
             maxAmount: 20,
@@ -143,8 +135,8 @@ const ortinax: ServantUpgrades = {
         initialCooldown: 9,
         effects: [
           {
-            type: SkillEffectType.Invincible,
-            target: SkillEffectTarget.Self,
+            type: 'Invincible',
+            target: 'Self',
             minAmount: 1,
             maxAmount: 1,
             duration: {
@@ -153,8 +145,8 @@ const ortinax: ServantUpgrades = {
             },
           },
           {
-            type: SkillEffectType.TargetFocus,
-            target: SkillEffectTarget.Self,
+            type: 'TargetFocus',
+            target: 'Self',
             minAmount: 1,
             maxAmount: 1,
             duration: {
@@ -163,8 +155,8 @@ const ortinax: ServantUpgrades = {
             },
           },
           {
-            type: SkillEffectType.DecreaseHp,
-            target: SkillEffectTarget.Self,
+            type: 'DecreaseHp',
+            target: 'Self',
             minAmount: 2500,
             stepAmount: -200,
             maxAmount: 500,
@@ -180,8 +172,8 @@ const ortinax: ServantUpgrades = {
         name: 'Mold Camelot',
         effects: [
           {
-            type: SkillEffectType.IncomingDamageCut,
-            target: SkillEffectTarget.AllAllies,
+            type: 'IncomingDamageCut',
+            target: 'AllAllies',
             amount1: 100,
             amount2: 550,
             amount3: 775,
@@ -195,8 +187,8 @@ const ortinax: ServantUpgrades = {
         ],
         overchargeEffects: [
           {
-            type: SkillEffectType.IncreaseDefense,
-            target: SkillEffectTarget.AllAllies,
+            type: 'IncreaseDefense',
+            target: 'AllAllies',
             amount1: new Percent(30),
             amount2: new Percent(35),
             amount3: new Percent(40),
@@ -216,21 +208,21 @@ const ortinax: ServantUpgrades = {
 export const s001: ServantStaticData = {
   id: 1,
   name: 'Mash Kyrielight',
-  rarity: ServantRarity.Rare,
-  class: ServantClass.Shielder,
+  rarity: 'Rare',
+  class: 'Shielder',
   baseAtk: 1261,
   baseHp: 1854,
   maxAtk: 6791,
   maxHp: 10302,
-  attribute: ServantAttribute.Earth,
+  attribute: 'Earth',
   traits: [
-    ServantTrait.DemiServant,
-    ServantTrait.Female,
-    ServantTrait.Humanoid,
-    ServantTrait.LivingHuman,
-    ServantTrait.Riding,
-    ServantTrait.Servant,
-    ServantTrait.WeakToEnumaElish,
+    'DemiServant',
+    'Female',
+    'Humanoid',
+    'LivingHuman',
+    'Riding',
+    'Servant',
+    'WeakToEnumaElish',
   ],
   npPerHit: 0.84,
   npWhenAttacked: 3,
@@ -240,14 +232,14 @@ export const s001: ServantStaticData = {
     {
       name: 'Magic Resistance A',
       effect: [{
-        type: SkillEffectType.IncreaseDebuffResist,
+        type: 'IncreaseDebuffResist',
         amount: new Percent(20),
       }],
     },
     {
       name: 'Riding C',
       effect: [{
-        type: SkillEffectType.QuickCardEffectiveness,
+        type: 'QuickCardEffectiveness',
         amount: new Percent(6),
       }],
     },
@@ -257,8 +249,8 @@ export const s001: ServantStaticData = {
     initialCooldown: 7,
     effects: [
       {
-        type: SkillEffectType.IncreaseDefense,
-        target: SkillEffectTarget.AllAllies,
+        type: 'IncreaseDefense',
+        target: 'AllAllies',
         minAmount: new Percent(10),
         stepAmount: new Percent(0.5),
         maxAmount: new Percent(15),
@@ -274,8 +266,8 @@ export const s001: ServantStaticData = {
     initialCooldown: 9,
     effects: [
       {
-        type: SkillEffectType.Invincible,
-        target: SkillEffectTarget.TargetAlly,
+        type: 'Invincible',
+        target: 'TargetAlly',
         minAmount: 1,
         maxAmount: 1,
         duration: {
@@ -284,8 +276,8 @@ export const s001: ServantStaticData = {
         },
       },
       {
-        type: SkillEffectType.NpGaugeUp,
-        target: SkillEffectTarget.TargetAlly,
+        type: 'NpGaugeUp',
+        target: 'TargetAlly',
         minAmount: 10,
         stepAmount: 1,
         maxAmount: 20,
@@ -301,8 +293,8 @@ export const s001: ServantStaticData = {
     initialCooldown: 8,
     effects: [
       {
-        type: SkillEffectType.TargetFocus,
-        target: SkillEffectTarget.Self,
+        type: 'TargetFocus',
+        target: 'Self',
         minAmount: 1,
         maxAmount: 1,
         duration: {
@@ -311,8 +303,8 @@ export const s001: ServantStaticData = {
         },
       },
       {
-        type: SkillEffectType.NpGain,
-        target: SkillEffectTarget.Self,
+        type: 'NpGain',
+        target: 'Self',
         minAmount: new Percent(200),
         stepAmount: new Percent(20),
         maxAmount: new Percent(400),
@@ -324,16 +316,16 @@ export const s001: ServantStaticData = {
     ],
   },
   noblePhantasm: {
-    cardType: CardType.Arts,
+    cardType: 'Arts',
     name: 'Lord Chaldeas D',
     minDamagePlus: new Percent(0),
     maxDamagePlus: new Percent(0),
     numOfHits: 0,
-    targets: NoblePhantasmTargets.None,
+    targets: 'None',
     effects: [
       {
-        type: SkillEffectType.IncomingDamageCut,
-        target: SkillEffectTarget.AllAllies,
+        type: 'IncomingDamageCut',
+        target: 'AllAllies',
         amount1: 100,
         amount2: 550,
         amount3: 775,
@@ -347,8 +339,8 @@ export const s001: ServantStaticData = {
     ],
     overchargeEffects: [
       {
-        type: SkillEffectType.IncreaseDefense,
-        target: SkillEffectTarget.AllAllies,
+        type: 'IncreaseDefense',
+        target: 'AllAllies',
         amount1: new Percent(30),
         amount2: new Percent(35),
         amount3: new Percent(40),
@@ -378,14 +370,14 @@ export const s001: ServantStaticData = {
     [],
   ],
   skillMats: [
-    [[Bronze.ProofOfHero, 5]],
-    [[Bronze.DragonFang, 5]],
-    [[Silver.SeedOfYggdrasil, 5]],
-    [[Silver.OctupletCrystals, 5]],
-    [[Bronze.VoidsDust, 5]],
-    [[Silver.EternalGear, 5]],
-    [[Silver.PhoenixFeather, 5]],
-    [[Gold.DragonsReverseScale, 5]],
+    [['ProofOfHero', 5]],
+    [['DragonFang', 5]],
+    [['SeedOfYggdrasil', 5]],
+    [['OctupletCrystals', 5]],
+    [['VoidsDust', 5]],
+    [['EternalGear', 5]],
+    [['PhoenixFeather', 5]],
+    [['DragonsReverseScale', 5]],
   ],
   upgrades: [
     clearCamelot15,

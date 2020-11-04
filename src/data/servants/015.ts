@@ -1,11 +1,5 @@
-import { Silver, Gold, Bronze } from '@/models/Material';
-import { NoblePhantasmTargets } from '@/models/NoblePhantasm';
 import { Percent } from '@/models/Percent';
-import {
-  ServantRarity, ServantClass, ServantAttribute, ServantTrait, CardType,
-} from '@/models/ServantMiscTypes';
 import { ServantStaticData, ServantUpgrades } from '@/models/ServantStaticData';
-import { SkillEffectType, SkillEffectTarget } from '@/models/Skills';
 
 const interludeQuest1: ServantUpgrades = {
   name: 'Interlude Quest 1',
@@ -24,21 +18,21 @@ const interludeQuest1: ServantUpgrades = {
 export const s015: ServantStaticData = {
   id: 15,
   name: 'Euryale',
-  rarity: ServantRarity.Uncommon,
-  class: ServantClass.Archer,
+  rarity: 'Uncommon',
+  class: 'Archer',
   baseAtk: 1306,
   baseHp: 1711,
   maxAtk: 7032,
   maxHp: 9506,
-  attribute: ServantAttribute.Sky,
+  attribute: 'Sky',
   traits: [
-    ServantTrait.Divine,
-    ServantTrait.Female,
-    ServantTrait.Humanoid,
-    ServantTrait.Servant,
-    ServantTrait.WeakToEnumaElish,
-    ServantTrait.Chaotic,
-    ServantTrait.Good,
+    'Divine',
+    'Female',
+    'Humanoid',
+    'Servant',
+    'WeakToEnumaElish',
+    'Chaotic',
+    'Good',
   ],
   npPerHit: 0.9,
   npWhenAttacked: 3,
@@ -49,7 +43,7 @@ export const s015: ServantStaticData = {
       name: 'Magic Resistance A',
       effect: [
         {
-          type: SkillEffectType.IncreaseDebuffResist,
+          type: 'IncreaseDebuffResist',
           amount: new Percent(20),
         },
       ],
@@ -58,7 +52,7 @@ export const s015: ServantStaticData = {
       name: 'Independent Action A+ ',
       effect: [
         {
-          type: SkillEffectType.IncreaseCritStrength,
+          type: 'IncreaseCritStrength',
           amount: new Percent(11),
         },
       ],
@@ -67,11 +61,11 @@ export const s015: ServantStaticData = {
       name: 'Goddess\' Essence EX',
       effect: [
         {
-          type: SkillEffectType.IncreaseDamage,
+          type: 'IncreaseDamage',
           amount: 300,
         },
         {
-          type: SkillEffectType.IncreaseDebuffResist,
+          type: 'IncreaseDebuffResist',
           amount: new Percent(30),
         },
       ],
@@ -82,8 +76,8 @@ export const s015: ServantStaticData = {
     initialCooldown: 8,
     effects: [
       {
-        type: SkillEffectType.ReduceNpGaugeChance,
-        target: SkillEffectTarget.Enemy,
+        type: 'ReduceNpGaugeChance',
+        target: 'Enemy',
         minAmount: new Percent(60),
         stepAmount: new Percent(2),
         maxAmount: new Percent(80),
@@ -93,8 +87,8 @@ export const s015: ServantStaticData = {
         },
       },
       {
-        type: SkillEffectType.NpGain,
-        target: SkillEffectTarget.Self,
+        type: 'NpGain',
+        target: 'Self',
         minAmount: new Percent(18),
         stepAmount: new Percent(0.9),
         maxAmount: new Percent(27),
@@ -110,9 +104,9 @@ export const s015: ServantStaticData = {
     initialCooldown: 9,
     effects: [
       {
-        type: SkillEffectType.Charm,
-        target: SkillEffectTarget.Enemy,
-        targetTrait: ServantTrait.Male,
+        type: 'Charm',
+        target: 'Enemy',
+        targetTrait: 'Male',
         minAmount: new Percent(70),
         stepAmount: new Percent(3),
         maxAmount: new Percent(100),
@@ -128,8 +122,8 @@ export const s015: ServantStaticData = {
     initialCooldown: 7,
     effects: [
       {
-        type: SkillEffectType.ArtsEffectivenessUp,
-        target: SkillEffectTarget.Self,
+        type: 'ArtsEffectivenessUp',
+        target: 'Self',
         minAmount: new Percent(20),
         stepAmount: new Percent(1),
         maxAmount: new Percent(30),
@@ -141,17 +135,17 @@ export const s015: ServantStaticData = {
     ],
   },
   noblePhantasm: {
-    cardType: CardType.Arts,
+    cardType: 'Arts',
     name: 'Eye of the Euryale B-',
     minDamagePlus: new Percent(900),
     maxDamagePlus: new Percent(900),
     numOfHits: 1,
-    targets: NoblePhantasmTargets.SingleTarget,
+    targets: 'SingleTarget',
     effects: [
       {
-        type: SkillEffectType.SpecialAttack,
-        target: SkillEffectTarget.Enemy,
-        targetTrait: ServantTrait.Male,
+        type: 'SpecialAttack',
+        target: 'Enemy',
+        targetTrait: 'Male',
         amount1: new Percent(150),
         amount2: new Percent(200),
         amount3: new Percent(225),
@@ -163,8 +157,8 @@ export const s015: ServantStaticData = {
         },
       },
       {
-        type: SkillEffectType.DecreaseAttack,
-        target: SkillEffectTarget.TargetAlly,
+        type: 'DecreaseAttack',
+        target: 'TargetAlly',
         amount1: new Percent(20),
         amount2: new Percent(20),
         amount3: new Percent(20),
@@ -178,9 +172,9 @@ export const s015: ServantStaticData = {
     ],
     overchargeEffects: [
       {
-        type: SkillEffectType.Charm,
-        target: SkillEffectTarget.EnemyWithTrait,
-        targetTrait: ServantTrait.Male,
+        type: 'Charm',
+        target: 'EnemyWithTrait',
+        targetTrait: 'Male',
         amount1: new Percent(100),
         amount2: new Percent(125),
         amount3: new Percent(150),
@@ -205,19 +199,19 @@ export const s015: ServantStaticData = {
   instantDeathChance: 22.5,
   ascensionMats: [
     [],
-    [[Silver.SerpentJewel, 4]],
-    [[Gold.DragonsReverseScale, 3], [Bronze.VoidsDust, 7]],
-    [[Bronze.VoidsDust, 13], [Gold.HeartOfTheForeignGod, 4]],
+    [['SerpentJewel', 4]],
+    [['DragonsReverseScale', 3], ['VoidsDust', 7]],
+    [['VoidsDust', 13], ['HeartOfTheForeignGod', 4]],
   ],
   skillMats: [
     [],
     [],
     [],
-    [[Gold.DragonsReverseScale, 2]],
-    [[Gold.DragonsReverseScale, 3]],
-    [[Silver.SerpentJewel, 3]],
-    [[Silver.SerpentJewel, 6], [Gold.ClawOfChaos, 3]],
-    [[Gold.ClawOfChaos, 8], [Gold.HeartOfTheForeignGod, 8]],
+    [['DragonsReverseScale', 2]],
+    [['DragonsReverseScale', 3]],
+    [['SerpentJewel', 3]],
+    [['SerpentJewel', 6], ['ClawOfChaos', 3]],
+    [['ClawOfChaos', 8], ['HeartOfTheForeignGod', 8]],
   ],
   upgrades: [interludeQuest1],
 };

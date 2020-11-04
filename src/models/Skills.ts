@@ -29,41 +29,39 @@ export interface LevelableSkillEffect {
     battlefield?: BattlefieldType;
 }
 
-export enum SkillEffectTarget {
-  AllAllies,
-  AllAlliesExceptSelf,
-  AllEnemies,
-  AlliesWithTrait,
-  EnemiesWithTrait,
-  Enemy,
-  EnemyWithTrait,
-  Self,
-  TargetAlly,
-}
+export type SkillEffectTarget =
+  'AllAllies' |
+  'AllAlliesExceptSelf' |
+  'AllEnemies' |
+  'AlliesWithTrait' |
+  'EnemiesWithTrait' |
+  'Enemy' |
+  'EnemyWithTrait' |
+  'Self' |
+  'TargetAlly'
 
-export enum SkillEffectType {
-    ArtsEffectivenessUp,
-    AttackUp,
-    BusterCritDamageUp,
-    BusterEffectivenessUp,
-    DecreaseCritStarGatherRate,
-    DecreaseHp,
-    GainCritStars,
-    IgnoreInvincible,
-    IncomingDamageCut,
-    IncreaseCritStarDropRate,
-    IncreaseCritStrength,
-    IncreaseDebuffResist,
-    IncreaseDefense,
-    Invincible,
-    NpDamageUp,
-    NpGain,
-    NpGaugeUp,
-    QuickCardEffectiveness,
-    SpecialAttack,
-    TargetFocus,
-    IncreaseDamage,
-    ReduceNpGaugeChance,
-    Charm,
-    DecreaseAttack
-}
+export type SkillEffectType =
+    'ArtsEffectivenessUp' |
+    'AttackUp' |
+    'BusterCritDamageUp' |
+    'BusterEffectivenessUp' |
+    'DecreaseCritStarGatherRate' |
+    'DecreaseHp' |
+    'GainCritStars' |
+    'IgnoreInvincible' |
+    'IncomingDamageCut' |
+    'IncreaseCritStarDropRate' |
+    'IncreaseCritStrength' |
+    'IncreaseDebuffResist' |
+    'IncreaseDefense' |
+    'Invincible' |
+    'NpDamageUp' |
+    'NpGain' |
+    'NpGaugeUp' |
+    'QuickCardEffectiveness' |
+    'SpecialAttack' |
+    'TargetFocus' |
+    'IncreaseDamage' |
+    'ReduceNpGaugeChance' |
+    'Charm' |
+    'DecreaseAttack'

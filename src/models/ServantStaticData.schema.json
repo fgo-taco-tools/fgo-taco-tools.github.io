@@ -1,0 +1,1029 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "ActiveSkill": {
+            "properties": {
+                "effects": {
+                    "items": {
+                        "$ref": "#/definitions/LevelableSkillEffect"
+                    },
+                    "type": "array"
+                },
+                "initialCooldown": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "CardType": {
+            "enum": [
+                "Arts",
+                "Buster",
+                "Other",
+                "Quick"
+            ],
+            "type": "string"
+        },
+        "Duration": {
+            "properties": {
+                "times": {
+                    "anyOf": [
+                        {
+                            "enum": [
+                                "None"
+                            ],
+                            "type": "string"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ]
+                },
+                "turns": {
+                    "anyOf": [
+                        {
+                            "enum": [
+                                "None"
+                            ],
+                            "type": "string"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ]
+                }
+            },
+            "type": "object"
+        },
+        "LevelableSkillEffect": {
+            "properties": {
+                "battlefield": {
+                    "enum": [
+                        "Fire",
+                        "Waterside"
+                    ],
+                    "type": "string"
+                },
+                "duration": {
+                    "$ref": "#/definitions/Duration"
+                },
+                "maxAmount": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Percent"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ]
+                },
+                "minAmount": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Percent"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ]
+                },
+                "stepAmount": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Percent"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ]
+                },
+                "target": {
+                    "$ref": "#/definitions/SkillEffectTarget"
+                },
+                "targetTrait": {
+                    "enum": [
+                        "ArgoRelated",
+                        "Arthur",
+                        "Beast",
+                        "BrynhildrsBeloved",
+                        "Chaotic",
+                        "ChildrenServant",
+                        "DemiServant",
+                        "Demonic",
+                        "Divine",
+                        "Dragon",
+                        "Evil",
+                        "Female",
+                        "Giant",
+                        "Good",
+                        "GreekMythologyMale",
+                        "Humanoid",
+                        "Illya",
+                        "King",
+                        "Lawful",
+                        "LivingHuman",
+                        "Male",
+                        "NeutralGood",
+                        "NeutralLaw",
+                        "OtherSex",
+                        "PseudoServants",
+                        "Riding",
+                        "Saber",
+                        "Saberface",
+                        "Servant",
+                        "SuperLarge",
+                        "ThreatToHumanity",
+                        "WeakToEnumaElish"
+                    ],
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/SkillEffectType"
+                }
+            },
+            "type": "object"
+        },
+        "NoblePhantasm": {
+            "properties": {
+                "cardType": {
+                    "$ref": "#/definitions/CardType"
+                },
+                "effects": {
+                    "items": {
+                        "$ref": "#/definitions/NoblePhantasmEffect"
+                    },
+                    "type": "array"
+                },
+                "maxDamagePlus": {
+                    "$ref": "#/definitions/Percent"
+                },
+                "minDamagePlus": {
+                    "$ref": "#/definitions/Percent"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "numOfHits": {
+                    "type": "number"
+                },
+                "overchargeEffects": {
+                    "items": {
+                        "$ref": "#/definitions/NoblePhantasmEffect"
+                    },
+                    "type": "array"
+                },
+                "targets": {
+                    "$ref": "#/definitions/NoblePhantasmTargets"
+                }
+            },
+            "type": "object"
+        },
+        "NoblePhantasmEffect": {
+            "properties": {
+                "amount1": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Percent"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ]
+                },
+                "amount2": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Percent"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ]
+                },
+                "amount3": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Percent"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ]
+                },
+                "amount4": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Percent"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ]
+                },
+                "amount5": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Percent"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ]
+                },
+                "duration": {
+                    "$ref": "#/definitions/Duration"
+                },
+                "target": {
+                    "$ref": "#/definitions/SkillEffectTarget"
+                },
+                "targetTrait": {
+                    "enum": [
+                        "ArgoRelated",
+                        "Arthur",
+                        "Beast",
+                        "BrynhildrsBeloved",
+                        "Chaotic",
+                        "ChildrenServant",
+                        "DemiServant",
+                        "Demonic",
+                        "Divine",
+                        "Dragon",
+                        "Evil",
+                        "Female",
+                        "Giant",
+                        "Good",
+                        "GreekMythologyMale",
+                        "Humanoid",
+                        "Illya",
+                        "King",
+                        "Lawful",
+                        "LivingHuman",
+                        "Male",
+                        "NeutralGood",
+                        "NeutralLaw",
+                        "OtherSex",
+                        "PseudoServants",
+                        "Riding",
+                        "Saber",
+                        "Saberface",
+                        "Servant",
+                        "SuperLarge",
+                        "ThreatToHumanity",
+                        "WeakToEnumaElish"
+                    ],
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/SkillEffectType"
+                }
+            },
+            "type": "object"
+        },
+        "NoblePhantasmTargets": {
+            "enum": [
+                "AreaOfEffect",
+                "None",
+                "SingleTarget"
+            ],
+            "type": "string"
+        },
+        "PassiveSkill": {
+            "properties": {
+                "effect": {
+                    "items": {
+                        "$ref": "#/definitions/PassiveSkillEffect"
+                    },
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "PassiveSkillEffect": {
+            "properties": {
+                "amount": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/Percent"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ]
+                },
+                "battlefield": {
+                    "enum": [
+                        "Fire",
+                        "Waterside"
+                    ],
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/SkillEffectType"
+                }
+            },
+            "type": "object"
+        },
+        "Percent": {
+            "properties": {
+                "Value": {
+                    "type": "number"
+                },
+                "rawValue": {
+                    "type": "number"
+                },
+                "value": {
+                    "description": "Returns value as a modifier, e.g. 40% will be 0.4",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "ServantAllClass": {
+            "enum": [
+                "AlterEgo",
+                "Archer",
+                "Assassin",
+                "Avenger",
+                "Berserker",
+                "Caster",
+                "Foreigner",
+                "Lancer",
+                "MoonCancer",
+                "Rider",
+                "Ruler",
+                "Saber",
+                "Shielder"
+            ],
+            "type": "string"
+        },
+        "ServantAttribute": {
+            "enum": [
+                "Beast",
+                "Earth",
+                "Man",
+                "Sky",
+                "Star"
+            ],
+            "type": "string"
+        },
+        "ServantCards": {
+            "properties": {
+                "arts": {
+                    "type": "number"
+                },
+                "artsHits": {
+                    "type": "number"
+                },
+                "buster": {
+                    "type": "number"
+                },
+                "busterHits": {
+                    "type": "number"
+                },
+                "extraHits": {
+                    "type": "number"
+                },
+                "quick": {
+                    "type": "number"
+                },
+                "quickHits": {
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "ServantRarity": {
+            "enum": [
+                "AngryMang",
+                "Common",
+                "Rare",
+                "SuperRare",
+                "SuperSuperRare",
+                "Uncommon"
+            ],
+            "type": "string"
+        },
+        "ServantUpgrades": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "SkillEffectTarget": {
+            "enum": [
+                "AllAllies",
+                "AllAlliesExceptSelf",
+                "AllEnemies",
+                "AlliesWithTrait",
+                "EnemiesWithTrait",
+                "Enemy",
+                "EnemyWithTrait",
+                "Self",
+                "TargetAlly"
+            ],
+            "type": "string"
+        },
+        "SkillEffectType": {
+            "enum": [
+                "ArtsEffectivenessUp",
+                "AttackUp",
+                "BusterCritDamageUp",
+                "BusterEffectivenessUp",
+                "Charm",
+                "DecreaseAttack",
+                "DecreaseCritStarGatherRate",
+                "DecreaseHp",
+                "GainCritStars",
+                "IgnoreInvincible",
+                "IncomingDamageCut",
+                "IncreaseCritStarDropRate",
+                "IncreaseCritStrength",
+                "IncreaseDamage",
+                "IncreaseDebuffResist",
+                "IncreaseDefense",
+                "Invincible",
+                "NpDamageUp",
+                "NpGain",
+                "NpGaugeUp",
+                "QuickCardEffectiveness",
+                "ReduceNpGaugeChance",
+                "SpecialAttack",
+                "TargetFocus"
+            ],
+            "type": "string"
+        }
+    },
+    "properties": {
+        "activeSkill1": {
+            "$ref": "#/definitions/ActiveSkill"
+        },
+        "activeSkill2": {
+            "$ref": "#/definitions/ActiveSkill"
+        },
+        "activeSkill3": {
+            "$ref": "#/definitions/ActiveSkill"
+        },
+        "ascensionMats": {
+            "items": {
+                "items": {
+                    "additionalItems": {
+                        "anyOf": [
+                            {
+                                "anyOf": [
+                                    {
+                                        "additionalItems": {
+                                            "anyOf": [
+                                                {
+                                                    "enum": [
+                                                        "Gem",
+                                                        "MagicGem",
+                                                        "Monument",
+                                                        "Piece",
+                                                        "SecretGem"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "enum": [
+                                                        "Archer",
+                                                        "Assassin",
+                                                        "Berserker",
+                                                        "Caster",
+                                                        "Lancer",
+                                                        "Rider",
+                                                        "Saber"
+                                                    ],
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "items": [
+                                            {
+                                                "enum": [
+                                                    "Gem",
+                                                    "MagicGem",
+                                                    "Monument",
+                                                    "Piece",
+                                                    "SecretGem"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            {
+                                                "enum": [
+                                                    "Archer",
+                                                    "Assassin",
+                                                    "Berserker",
+                                                    "Caster",
+                                                    "Lancer",
+                                                    "Rider",
+                                                    "Saber"
+                                                ],
+                                                "type": "string"
+                                            }
+                                        ],
+                                        "minItems": 2,
+                                        "type": "array"
+                                    },
+                                    {
+                                        "enum": [
+                                            "AuroraSteel",
+                                            "BPellet",
+                                            "BlackBeastGrease",
+                                            "ClawOfChaos",
+                                            "CrystallizedLore",
+                                            "CursedBeastGallstone",
+                                            "DeadlyPoisonousNeedle",
+                                            "DragonFang",
+                                            "DragonsReverseScale",
+                                            "EternalGear",
+                                            "EternalIce",
+                                            "EvilBone",
+                                            "FoolsChain",
+                                            "ForbiddenPage",
+                                            "GhostLantern",
+                                            "GiantsRing",
+                                            "GreatKnightMedal",
+                                            "HeartOfTheForeignGod",
+                                            "HolyGrail",
+                                            "HomunculusBaby",
+                                            "LampOfEvilSealing",
+                                            "MeteorHorseshoe",
+                                            "MysteriousDivineWine",
+                                            "MysticGunpowder",
+                                            "MysticSpinalFluid",
+                                            "OctupletCrystals",
+                                            "PhoenixFeather",
+                                            "PieceOfRamjatai",
+                                            "PrimordialLanugo",
+                                            "ProofOfHero",
+                                            "RefinedMagatama",
+                                            "ScarabOfWisdom",
+                                            "SeedOfYggdrasil",
+                                            "SerpentJewel",
+                                            "ShellOfReminiscence",
+                                            "SpiritRoot",
+                                            "TearstoneOfBlood",
+                                            "VoidsDust",
+                                            "WarhorsesYoungHorn"
+                                        ],
+                                        "type": "string"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "number"
+                            }
+                        ]
+                    },
+                    "items": [
+                        {
+                            "anyOf": [
+                                {
+                                    "additionalItems": {
+                                        "anyOf": [
+                                            {
+                                                "enum": [
+                                                    "Gem",
+                                                    "MagicGem",
+                                                    "Monument",
+                                                    "Piece",
+                                                    "SecretGem"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            {
+                                                "enum": [
+                                                    "Archer",
+                                                    "Assassin",
+                                                    "Berserker",
+                                                    "Caster",
+                                                    "Lancer",
+                                                    "Rider",
+                                                    "Saber"
+                                                ],
+                                                "type": "string"
+                                            }
+                                        ]
+                                    },
+                                    "items": [
+                                        {
+                                            "enum": [
+                                                "Gem",
+                                                "MagicGem",
+                                                "Monument",
+                                                "Piece",
+                                                "SecretGem"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        {
+                                            "enum": [
+                                                "Archer",
+                                                "Assassin",
+                                                "Berserker",
+                                                "Caster",
+                                                "Lancer",
+                                                "Rider",
+                                                "Saber"
+                                            ],
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "minItems": 2,
+                                    "type": "array"
+                                },
+                                {
+                                    "enum": [
+                                        "AuroraSteel",
+                                        "BPellet",
+                                        "BlackBeastGrease",
+                                        "ClawOfChaos",
+                                        "CrystallizedLore",
+                                        "CursedBeastGallstone",
+                                        "DeadlyPoisonousNeedle",
+                                        "DragonFang",
+                                        "DragonsReverseScale",
+                                        "EternalGear",
+                                        "EternalIce",
+                                        "EvilBone",
+                                        "FoolsChain",
+                                        "ForbiddenPage",
+                                        "GhostLantern",
+                                        "GiantsRing",
+                                        "GreatKnightMedal",
+                                        "HeartOfTheForeignGod",
+                                        "HolyGrail",
+                                        "HomunculusBaby",
+                                        "LampOfEvilSealing",
+                                        "MeteorHorseshoe",
+                                        "MysteriousDivineWine",
+                                        "MysticGunpowder",
+                                        "MysticSpinalFluid",
+                                        "OctupletCrystals",
+                                        "PhoenixFeather",
+                                        "PieceOfRamjatai",
+                                        "PrimordialLanugo",
+                                        "ProofOfHero",
+                                        "RefinedMagatama",
+                                        "ScarabOfWisdom",
+                                        "SeedOfYggdrasil",
+                                        "SerpentJewel",
+                                        "ShellOfReminiscence",
+                                        "SpiritRoot",
+                                        "TearstoneOfBlood",
+                                        "VoidsDust",
+                                        "WarhorsesYoungHorn"
+                                    ],
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "minItems": 2,
+                    "type": "array"
+                },
+                "type": "array"
+            },
+            "type": "array"
+        },
+        "attribute": {
+            "$ref": "#/definitions/ServantAttribute"
+        },
+        "baseAtk": {
+            "type": "number"
+        },
+        "baseHp": {
+            "type": "number"
+        },
+        "cards": {
+            "$ref": "#/definitions/ServantCards"
+        },
+        "class": {
+            "$ref": "#/definitions/ServantAllClass"
+        },
+        "id": {
+            "type": "number"
+        },
+        "instantDeathChance": {
+            "type": "number"
+        },
+        "maxAtk": {
+            "type": "number"
+        },
+        "maxHp": {
+            "type": "number"
+        },
+        "name": {
+            "type": "string"
+        },
+        "noblePhantasm": {
+            "$ref": "#/definitions/NoblePhantasm"
+        },
+        "npPerHit": {
+            "type": "number"
+        },
+        "npWhenAttacked": {
+            "type": "number"
+        },
+        "passiveSkills": {
+            "items": {
+                "$ref": "#/definitions/PassiveSkill"
+            },
+            "type": "array"
+        },
+        "rarity": {
+            "$ref": "#/definitions/ServantRarity"
+        },
+        "skillMats": {
+            "items": {
+                "items": {
+                    "additionalItems": {
+                        "anyOf": [
+                            {
+                                "anyOf": [
+                                    {
+                                        "additionalItems": {
+                                            "anyOf": [
+                                                {
+                                                    "enum": [
+                                                        "Gem",
+                                                        "MagicGem",
+                                                        "Monument",
+                                                        "Piece",
+                                                        "SecretGem"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "enum": [
+                                                        "Archer",
+                                                        "Assassin",
+                                                        "Berserker",
+                                                        "Caster",
+                                                        "Lancer",
+                                                        "Rider",
+                                                        "Saber"
+                                                    ],
+                                                    "type": "string"
+                                                }
+                                            ]
+                                        },
+                                        "items": [
+                                            {
+                                                "enum": [
+                                                    "Gem",
+                                                    "MagicGem",
+                                                    "Monument",
+                                                    "Piece",
+                                                    "SecretGem"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            {
+                                                "enum": [
+                                                    "Archer",
+                                                    "Assassin",
+                                                    "Berserker",
+                                                    "Caster",
+                                                    "Lancer",
+                                                    "Rider",
+                                                    "Saber"
+                                                ],
+                                                "type": "string"
+                                            }
+                                        ],
+                                        "minItems": 2,
+                                        "type": "array"
+                                    },
+                                    {
+                                        "enum": [
+                                            "AuroraSteel",
+                                            "BPellet",
+                                            "BlackBeastGrease",
+                                            "ClawOfChaos",
+                                            "CrystallizedLore",
+                                            "CursedBeastGallstone",
+                                            "DeadlyPoisonousNeedle",
+                                            "DragonFang",
+                                            "DragonsReverseScale",
+                                            "EternalGear",
+                                            "EternalIce",
+                                            "EvilBone",
+                                            "FoolsChain",
+                                            "ForbiddenPage",
+                                            "GhostLantern",
+                                            "GiantsRing",
+                                            "GreatKnightMedal",
+                                            "HeartOfTheForeignGod",
+                                            "HolyGrail",
+                                            "HomunculusBaby",
+                                            "LampOfEvilSealing",
+                                            "MeteorHorseshoe",
+                                            "MysteriousDivineWine",
+                                            "MysticGunpowder",
+                                            "MysticSpinalFluid",
+                                            "OctupletCrystals",
+                                            "PhoenixFeather",
+                                            "PieceOfRamjatai",
+                                            "PrimordialLanugo",
+                                            "ProofOfHero",
+                                            "RefinedMagatama",
+                                            "ScarabOfWisdom",
+                                            "SeedOfYggdrasil",
+                                            "SerpentJewel",
+                                            "ShellOfReminiscence",
+                                            "SpiritRoot",
+                                            "TearstoneOfBlood",
+                                            "VoidsDust",
+                                            "WarhorsesYoungHorn"
+                                        ],
+                                        "type": "string"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "number"
+                            }
+                        ]
+                    },
+                    "items": [
+                        {
+                            "anyOf": [
+                                {
+                                    "additionalItems": {
+                                        "anyOf": [
+                                            {
+                                                "enum": [
+                                                    "Gem",
+                                                    "MagicGem",
+                                                    "Monument",
+                                                    "Piece",
+                                                    "SecretGem"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            {
+                                                "enum": [
+                                                    "Archer",
+                                                    "Assassin",
+                                                    "Berserker",
+                                                    "Caster",
+                                                    "Lancer",
+                                                    "Rider",
+                                                    "Saber"
+                                                ],
+                                                "type": "string"
+                                            }
+                                        ]
+                                    },
+                                    "items": [
+                                        {
+                                            "enum": [
+                                                "Gem",
+                                                "MagicGem",
+                                                "Monument",
+                                                "Piece",
+                                                "SecretGem"
+                                            ],
+                                            "type": "string"
+                                        },
+                                        {
+                                            "enum": [
+                                                "Archer",
+                                                "Assassin",
+                                                "Berserker",
+                                                "Caster",
+                                                "Lancer",
+                                                "Rider",
+                                                "Saber"
+                                            ],
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "minItems": 2,
+                                    "type": "array"
+                                },
+                                {
+                                    "enum": [
+                                        "AuroraSteel",
+                                        "BPellet",
+                                        "BlackBeastGrease",
+                                        "ClawOfChaos",
+                                        "CrystallizedLore",
+                                        "CursedBeastGallstone",
+                                        "DeadlyPoisonousNeedle",
+                                        "DragonFang",
+                                        "DragonsReverseScale",
+                                        "EternalGear",
+                                        "EternalIce",
+                                        "EvilBone",
+                                        "FoolsChain",
+                                        "ForbiddenPage",
+                                        "GhostLantern",
+                                        "GiantsRing",
+                                        "GreatKnightMedal",
+                                        "HeartOfTheForeignGod",
+                                        "HolyGrail",
+                                        "HomunculusBaby",
+                                        "LampOfEvilSealing",
+                                        "MeteorHorseshoe",
+                                        "MysteriousDivineWine",
+                                        "MysticGunpowder",
+                                        "MysticSpinalFluid",
+                                        "OctupletCrystals",
+                                        "PhoenixFeather",
+                                        "PieceOfRamjatai",
+                                        "PrimordialLanugo",
+                                        "ProofOfHero",
+                                        "RefinedMagatama",
+                                        "ScarabOfWisdom",
+                                        "SeedOfYggdrasil",
+                                        "SerpentJewel",
+                                        "ShellOfReminiscence",
+                                        "SpiritRoot",
+                                        "TearstoneOfBlood",
+                                        "VoidsDust",
+                                        "WarhorsesYoungHorn"
+                                    ],
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "minItems": 2,
+                    "type": "array"
+                },
+                "type": "array"
+            },
+            "type": "array"
+        },
+        "starAbsorption": {
+            "type": "number"
+        },
+        "starGenerationPerHit": {
+            "$ref": "#/definitions/Percent"
+        },
+        "traits": {
+            "items": {
+                "enum": [
+                    "ArgoRelated",
+                    "Arthur",
+                    "Beast",
+                    "BrynhildrsBeloved",
+                    "Chaotic",
+                    "ChildrenServant",
+                    "DemiServant",
+                    "Demonic",
+                    "Divine",
+                    "Dragon",
+                    "Evil",
+                    "Female",
+                    "Giant",
+                    "Good",
+                    "GreekMythologyMale",
+                    "Humanoid",
+                    "Illya",
+                    "King",
+                    "Lawful",
+                    "LivingHuman",
+                    "Male",
+                    "NeutralGood",
+                    "NeutralLaw",
+                    "OtherSex",
+                    "PseudoServants",
+                    "Riding",
+                    "Saber",
+                    "Saberface",
+                    "Servant",
+                    "SuperLarge",
+                    "ThreatToHumanity",
+                    "WeakToEnumaElish"
+                ],
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "upgrades": {
+            "items": {
+                "$ref": "#/definitions/ServantUpgrades"
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}
+

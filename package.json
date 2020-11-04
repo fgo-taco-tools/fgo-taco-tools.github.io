@@ -6,6 +6,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:schema": "typescript-json-schema tsconfig.json ServantStaticData > src/models/ServantStaticData.schema.json",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
     "deploy": "gh-pages -b build -d dist"
@@ -35,7 +36,8 @@
     "lint-staged": "^9.5.0",
     "sass": "^1.27.0",
     "sass-loader": "^8.0.2",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "typescript-json-schema": "^0.43.0"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
