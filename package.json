@@ -6,10 +6,13 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:schema": "typescript-json-schema tsconfig.json ServantStaticData > src/models/ServantStaticData.schema.json",
+    "build:all": "npm run build && npm run build:schema:all",
+    "build:schema:all": "npm run build:schema:mkdir && npm run build:schema:ServantStaticData",
+    "build:schema:mkdir": "mkdir -p dist/schema",
+    "build:schema:ServantStaticData": "typescript-json-schema tsconfig.json ServantStaticData -o dist/schema/ServantStaticData.schema.json",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
-    "deploy": "gh-pages -b build -d dist"
+    "deploy": "npm run build:all && gh-pages -b build -d dist"
   },
   "dependencies": {
     "core-js": "^3.6.5",
