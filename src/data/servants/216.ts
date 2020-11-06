@@ -1,9 +1,30 @@
-import { Percent } from '@/models/Percent';
 import { ServantStaticData } from '@/models/ServantStaticData';
 
 export const s216: ServantStaticData = {
   id: 216,
   name: 'Jeanne d\'Arc (Archer)',
+  japaneseName: 'ジャンヌ・ダルク',
+  otherNames: ['Jarcher'],
+  referenceData: {
+    region: 'France',
+    source: 'History',
+    series: 'Fate/Grand Order',
+    voiceActor: 'Sakamoto Maaya',
+    illustrator: 'Takeuchi Takashi',
+    growthCurve: 'Linear',
+    releaseDateJapan: new Date('2018-08-09'),
+    releaseDateNA: new Date('2020-08-03'),
+    height: 159,
+    weight: 44,
+    stats: {
+      agility: 'B+',
+      endurance: 'A',
+      luck: 'A',
+      mana: 'C',
+      np: 'A',
+      strength: 'C',
+    },
+  },
   rarity: 'SuperSuperRare',
   class: 'Archer',
   baseAtk: 1626,
@@ -21,13 +42,13 @@ export const s216: ServantStaticData = {
   npPerHit: 0.68,
   npWhenAttacked: 3,
   starAbsorption: 153,
-  starGenerationPerHit: new Percent(8),
+  starGenerationPerHit: '8%',
   passiveSkills: [
     {
       name: 'Magic Resistance B',
       effect: [{
         type: 'IncreaseDebuffResist',
-        amount: new Percent(17.5),
+        amount: '17.5%',
       }],
     },
     {
@@ -35,7 +56,7 @@ export const s216: ServantStaticData = {
       effect: [
         {
           type: 'IncreaseCritStrength',
-          amount: new Percent(10),
+          amount: '10%',
         },
         {
           type: 'NpGaugeUp',
@@ -52,9 +73,8 @@ export const s216: ServantStaticData = {
       {
         type: 'ArtsEffectivenessUp',
         target: 'Self',
-        minAmount: new Percent(20),
-        stepAmount: new Percent(1),
-        maxAmount: new Percent(30),
+        minAmount: '20%',
+        stepAmount: '1%',
         duration: {
           times: 'None',
           turns: 3,
@@ -65,7 +85,6 @@ export const s216: ServantStaticData = {
         target: 'Self',
         minAmount: 0,
         stepAmount: 0,
-        maxAmount: 0,
         duration: {
           times: 2,
           turns: 3,
@@ -82,7 +101,6 @@ export const s216: ServantStaticData = {
         target: 'Self',
         minAmount: 20,
         stepAmount: 2,
-        maxAmount: 40,
         duration: {
           times: 'None',
           turns: 'None',
@@ -91,9 +109,8 @@ export const s216: ServantStaticData = {
       {
         type: 'NpDamageUp',
         target: 'Self',
-        minAmount: new Percent(10),
-        stepAmount: new Percent(1),
-        maxAmount: new Percent(20),
+        minAmount: '10%',
+        stepAmount: '1%',
         duration: {
           times: 'None',
           turns: 3,
@@ -102,9 +119,8 @@ export const s216: ServantStaticData = {
       {
         type: 'IncreaseCritStrength',
         target: 'Self',
-        minAmount: new Percent(30),
-        stepAmount: new Percent(2),
-        maxAmount: new Percent(50),
+        minAmount: '30%',
+        stepAmount: '2%',
         duration: {
           times: 'None',
           turns: 3,
@@ -120,9 +136,8 @@ export const s216: ServantStaticData = {
       {
         type: 'AttackUp',
         target: 'AllAllies',
-        minAmount: new Percent(10),
-        stepAmount: new Percent(1),
-        maxAmount: new Percent(20),
+        minAmount: '10%',
+        stepAmount: '1%',
         duration: {
           times: 'None',
           turns: 3,
@@ -131,9 +146,8 @@ export const s216: ServantStaticData = {
       {
         type: 'AttackUp',
         target: 'AllAlliesExceptSelf',
-        minAmount: new Percent(10),
-        stepAmount: new Percent(1),
-        maxAmount: new Percent(20),
+        minAmount: '10%',
+        stepAmount: '1%',
         targetTrait: 'Good',
         duration: {
           times: 'None',
@@ -145,8 +159,8 @@ export const s216: ServantStaticData = {
   noblePhantasm: {
     cardType: 'Arts',
     name: 'Des Océans d\'Allégresse',
-    minDamagePlus: new Percent(450),
-    maxDamagePlus: new Percent(750),
+    minDamagePlus: '450%',
+    maxDamagePlus: '750%',
     numOfHits: 4,
     targets: 'AreaOfEffect',
     effects: [

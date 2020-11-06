@@ -1,4 +1,3 @@
-import { Percent } from '@/models/Percent';
 import { ServantStaticData, ServantUpgrades } from '@/models/ServantStaticData';
 
 const interludeQuest1: ServantUpgrades = {
@@ -8,8 +7,8 @@ const interludeQuest1: ServantUpgrades = {
       ...servant,
       noblePhantasm: {
         ...servant.noblePhantasm,
-        minDamagePlus: new Percent(1200),
-        maxDamagePlus: new Percent(1200),
+        minDamagePlus: '1200%',
+        maxDamagePlus: '1200%',
       },
     };
   },
@@ -18,6 +17,27 @@ const interludeQuest1: ServantUpgrades = {
 export const s015: ServantStaticData = {
   id: 15,
   name: 'Euryale',
+  japaneseName: 'エウリュアレ',
+  otherNames: ['The Far-Flier'],
+  referenceData: {
+    region: 'Europe',
+    source: 'Greek Mythology',
+    voiceActor: 'Yuu Asakawa',
+    series: 'Fate/hollow ataraxia',
+    illustrator: 'AKIRA',
+    growthCurve: 'Linear',
+    releaseDateJapan: 'Game Launch',
+    height: 134,
+    weight: 30,
+    stats: {
+      agility: 'C',
+      endurance: 'E',
+      luck: 'EX',
+      mana: 'EX',
+      np: 'C',
+      strength: 'E',
+    },
+  },
   rarity: 'Uncommon',
   class: 'Archer',
   baseAtk: 1306,
@@ -37,14 +57,14 @@ export const s015: ServantStaticData = {
   npPerHit: 0.9,
   npWhenAttacked: 3,
   starAbsorption: 156,
-  starGenerationPerHit: new Percent(7.9),
+  starGenerationPerHit: '7.9%',
   passiveSkills: [
     {
       name: 'Magic Resistance A',
       effect: [
         {
           type: 'IncreaseDebuffResist',
-          amount: new Percent(20),
+          amount: '20%',
         },
       ],
     },
@@ -53,7 +73,7 @@ export const s015: ServantStaticData = {
       effect: [
         {
           type: 'IncreaseCritStrength',
-          amount: new Percent(11),
+          amount: '11%',
         },
       ],
     },
@@ -66,7 +86,7 @@ export const s015: ServantStaticData = {
         },
         {
           type: 'IncreaseDebuffResist',
-          amount: new Percent(30),
+          amount: '30%',
         },
       ],
     },
@@ -78,9 +98,8 @@ export const s015: ServantStaticData = {
       {
         type: 'ReduceNpGaugeChance',
         target: 'Enemy',
-        minAmount: new Percent(60),
-        stepAmount: new Percent(2),
-        maxAmount: new Percent(80),
+        minAmount: '60%',
+        stepAmount: '2%',
         duration: {
           times: 1,
           turns: 'None',
@@ -89,9 +108,8 @@ export const s015: ServantStaticData = {
       {
         type: 'NpGain',
         target: 'Self',
-        minAmount: new Percent(18),
-        stepAmount: new Percent(0.9),
-        maxAmount: new Percent(27),
+        minAmount: '18%',
+        stepAmount: '0.9%',
         duration: {
           times: 'None',
           turns: 'None',
@@ -107,9 +125,8 @@ export const s015: ServantStaticData = {
         type: 'Charm',
         target: 'Enemy',
         targetTrait: 'Male',
-        minAmount: new Percent(70),
-        stepAmount: new Percent(3),
-        maxAmount: new Percent(100),
+        minAmount: '70%',
+        stepAmount: '3%',
         duration: {
           times: 'None',
           turns: 1,
@@ -124,9 +141,8 @@ export const s015: ServantStaticData = {
       {
         type: 'ArtsEffectivenessUp',
         target: 'Self',
-        minAmount: new Percent(20),
-        stepAmount: new Percent(1),
-        maxAmount: new Percent(30),
+        minAmount: '20%',
+        stepAmount: '1%',
         duration: {
           times: 'None',
           turns: 3,
@@ -137,8 +153,8 @@ export const s015: ServantStaticData = {
   noblePhantasm: {
     cardType: 'Arts',
     name: 'Eye of the Euryale B-',
-    minDamagePlus: new Percent(900),
-    maxDamagePlus: new Percent(900),
+    minDamagePlus: '900%',
+    maxDamagePlus: '900%',
     numOfHits: 1,
     targets: 'SingleTarget',
     effects: [
@@ -146,11 +162,11 @@ export const s015: ServantStaticData = {
         type: 'SpecialAttack',
         target: 'Enemy',
         targetTrait: 'Male',
-        amount1: new Percent(150),
-        amount2: new Percent(200),
-        amount3: new Percent(225),
-        amount4: new Percent(237.5),
-        amount5: new Percent(250),
+        amount1: '150%',
+        amount2: '200%',
+        amount3: '225%',
+        amount4: '237.5%',
+        amount5: '250%',
         duration: {
           times: 1,
           turns: 'None',
@@ -159,11 +175,11 @@ export const s015: ServantStaticData = {
       {
         type: 'DecreaseAttack',
         target: 'TargetAlly',
-        amount1: new Percent(20),
-        amount2: new Percent(20),
-        amount3: new Percent(20),
-        amount4: new Percent(20),
-        amount5: new Percent(20),
+        amount1: '20%',
+        amount2: '20%',
+        amount3: '20%',
+        amount4: '20%',
+        amount5: '20%',
         duration: {
           times: 'None',
           turns: 3,
@@ -175,11 +191,11 @@ export const s015: ServantStaticData = {
         type: 'Charm',
         target: 'EnemyWithTrait',
         targetTrait: 'Male',
-        amount1: new Percent(100),
-        amount2: new Percent(125),
-        amount3: new Percent(150),
-        amount4: new Percent(175),
-        amount5: new Percent(200),
+        amount1: '100%',
+        amount2: '125%',
+        amount3: '150%',
+        amount4: '175%',
+        amount5: '200%',
         duration: {
           times: 'None',
           turns: 1,

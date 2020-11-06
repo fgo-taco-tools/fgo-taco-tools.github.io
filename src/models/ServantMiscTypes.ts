@@ -39,6 +39,7 @@ export type ServantAttribute =
 export type ServantTrait =
   'ArgoRelated' |
   'Arthur' |
+  'Balanced' |
   'Beast' |
   'BrynhildrsBeloved' |
   'Chaotic' |
@@ -58,8 +59,7 @@ export type ServantTrait =
   'Lawful' |
   'LivingHuman' |
   'Male' |
-  'NeutralGood' |
-  'NeutralLaw' |
+  'Neutral' |
   'OtherSex' |
   'PseudoServants' |
   'Riding' |
@@ -73,8 +73,7 @@ export type ServantTrait =
 export type CardType =
   'Buster' |
   'Arts' |
-  'Quick' |
-  'Other'
+  'Quick'
 
 export interface ServantCards {
   buster: number;
@@ -157,12 +156,32 @@ export type ClassMaterialTypes =
 
 export type ClassMaterial = [ClassMaterialTypes, ServantCoreClass]
 
-export type GemOf = ServantCoreClass
+export interface ServantReferenceData {
+  voiceActor: string;
+  source?: string;
+  region?: string;
+  illustrator: string;
+  series?: string;
+  releaseDateJapan: Date | 'Game Launch';
+  releaseDateNA?: Date | 'Game Launch';
+  growthCurve: ServantGrowthCurve;
+  height?: number;
+  weight?: number;
+  stats: ServantStats;
+}
 
-export type MagicGemOf = ServantCoreClass
+export interface ServantStats {
+  strength: string;
+  endurance: string;
+  agility: string;
+  mana: string;
+  luck: string;
+  np: string;
+}
 
-export type SecretGemOf = ServantCoreClass
-
-export type Piece = ServantCoreClass
-
-export type Monument = ServantCoreClass
+export type ServantGrowthCurve =
+  'Linear' |
+  'S' |
+  'ReverseS' |
+  'SemiS' |
+  'SemiReverseS'

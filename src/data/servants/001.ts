@@ -1,5 +1,4 @@
 import { ServantStaticData, ServantUpgrades } from '@/models/ServantStaticData';
-import { Percent } from '@/models/Percent';
 
 const clearCamelot15: ServantUpgrades = {
   name: 'Clear Camelot 15-1',
@@ -16,9 +15,8 @@ const clearCamelot15: ServantUpgrades = {
           {
             type: 'IncreaseDefense',
             target: 'AllAllies',
-            minAmount: new Percent(15),
-            stepAmount: new Percent(0.5),
-            maxAmount: new Percent(20),
+            minAmount: '15%',
+            stepAmount: '0.5%',
             duration: {
               times: 'None',
               turns: 3,
@@ -29,7 +27,6 @@ const clearCamelot15: ServantUpgrades = {
             target: 'AllAllies',
             minAmount: 2000,
             stepAmount: 0,
-            maxAmount: 2000,
             duration: {
               times: 1,
               turns: 'None',
@@ -54,11 +51,11 @@ const clearCamelot17: ServantUpgrades = {
           {
             type: 'AttackUp',
             target: 'AllAlliesExceptSelf',
-            amount1: new Percent(30),
-            amount2: new Percent(30),
-            amount3: new Percent(30),
-            amount4: new Percent(30),
-            amount5: new Percent(30),
+            amount1: '30%',
+            amount2: '30%',
+            amount3: '30%',
+            amount4: '30%',
+            amount5: '30%',
             duration: {
               times: 'None',
               turns: 3,
@@ -82,9 +79,8 @@ const ortinax: ServantUpgrades = {
           {
             type: 'BusterEffectivenessUp',
             target: 'Self',
-            minAmount: new Percent(30),
-            stepAmount: new Percent(2),
-            maxAmount: new Percent(50),
+            minAmount: '30%',
+            stepAmount: '2%',
             duration: {
               times: 1,
               turns: 3,
@@ -93,9 +89,8 @@ const ortinax: ServantUpgrades = {
           {
             type: 'BusterCritDamageUp',
             target: 'Self',
-            minAmount: new Percent(30),
-            stepAmount: new Percent(2),
-            maxAmount: new Percent(50),
+            minAmount: '30%',
+            stepAmount: '2%',
             duration: {
               times: 1,
               turns: 3,
@@ -111,7 +106,7 @@ const ortinax: ServantUpgrades = {
             type: 'TargetFocus',
             target: 'Self',
             minAmount: 1,
-            maxAmount: 1,
+            stepAmount: 0,
             duration: {
               times: 'None',
               turns: 1,
@@ -122,7 +117,6 @@ const ortinax: ServantUpgrades = {
             target: 'TargetAlly',
             minAmount: 10,
             stepAmount: 1,
-            maxAmount: 20,
             duration: {
               times: 'None',
               turns: 1,
@@ -138,7 +132,7 @@ const ortinax: ServantUpgrades = {
             type: 'Invincible',
             target: 'Self',
             minAmount: 1,
-            maxAmount: 1,
+            stepAmount: 0,
             duration: {
               times: 'None',
               turns: 1,
@@ -148,7 +142,7 @@ const ortinax: ServantUpgrades = {
             type: 'TargetFocus',
             target: 'Self',
             minAmount: 1,
-            maxAmount: 1,
+            stepAmount: 0,
             duration: {
               times: 'None',
               turns: 1,
@@ -159,7 +153,6 @@ const ortinax: ServantUpgrades = {
             target: 'Self',
             minAmount: 2500,
             stepAmount: -200,
-            maxAmount: 500,
             duration: {
               times: 'None',
               turns: 'None',
@@ -189,11 +182,11 @@ const ortinax: ServantUpgrades = {
           {
             type: 'IncreaseDefense',
             target: 'AllAllies',
-            amount1: new Percent(30),
-            amount2: new Percent(35),
-            amount3: new Percent(40),
-            amount4: new Percent(45),
-            amount5: new Percent(50),
+            amount1: '30%',
+            amount2: '35%',
+            amount3: '40%',
+            amount4: '45%',
+            amount5: '50%',
             duration: {
               times: 'None',
               turns: 3,
@@ -208,6 +201,28 @@ const ortinax: ServantUpgrades = {
 export const s001: ServantStaticData = {
   id: 1,
   name: 'Mash Kyrielight',
+  japaneseName: 'マシュ・キリエライト',
+  otherNames: ['Mashu Kirielite'],
+  referenceData: {
+    voiceActor: 'Takahashi Rie',
+    source: 'Fate/Grand Order',
+    region: 'Chaldea',
+    illustrator: 'Takeuchi Takashi',
+    series: 'Fate/Grand Order',
+    releaseDateJapan: 'Game Launch',
+    releaseDateNA: 'Game Launch',
+    growthCurve: 'Linear',
+    height: 158,
+    weight: 46,
+    stats: {
+      agility: 'D',
+      endurance: 'A',
+      luck: 'C',
+      mana: 'B',
+      np: '',
+      strength: 'C',
+    },
+  },
   rarity: 'Rare',
   class: 'Shielder',
   baseAtk: 1261,
@@ -227,20 +242,20 @@ export const s001: ServantStaticData = {
   npPerHit: 0.84,
   npWhenAttacked: 3,
   starAbsorption: 99,
-  starGenerationPerHit: new Percent(9.9),
+  starGenerationPerHit: '9.9%',
   passiveSkills: [
     {
       name: 'Magic Resistance A',
       effect: [{
         type: 'IncreaseDebuffResist',
-        amount: new Percent(20),
+        amount: '20%',
       }],
     },
     {
       name: 'Riding C',
       effect: [{
         type: 'QuickCardEffectiveness',
-        amount: new Percent(6),
+        amount: '6%',
       }],
     },
   ],
@@ -251,9 +266,8 @@ export const s001: ServantStaticData = {
       {
         type: 'IncreaseDefense',
         target: 'AllAllies',
-        minAmount: new Percent(10),
-        stepAmount: new Percent(0.5),
-        maxAmount: new Percent(15),
+        minAmount: '10%',
+        stepAmount: '0.5%',
         duration: {
           times: 'None',
           turns: 3,
@@ -269,7 +283,7 @@ export const s001: ServantStaticData = {
         type: 'Invincible',
         target: 'TargetAlly',
         minAmount: 1,
-        maxAmount: 1,
+        stepAmount: 0,
         duration: {
           times: 'None',
           turns: 1,
@@ -280,7 +294,6 @@ export const s001: ServantStaticData = {
         target: 'TargetAlly',
         minAmount: 10,
         stepAmount: 1,
-        maxAmount: 20,
         duration: {
           times: 'None',
           turns: 'None',
@@ -296,7 +309,7 @@ export const s001: ServantStaticData = {
         type: 'TargetFocus',
         target: 'Self',
         minAmount: 1,
-        maxAmount: 1,
+        stepAmount: 0,
         duration: {
           times: 'None',
           turns: 1,
@@ -305,9 +318,8 @@ export const s001: ServantStaticData = {
       {
         type: 'NpGain',
         target: 'Self',
-        minAmount: new Percent(200),
-        stepAmount: new Percent(20),
-        maxAmount: new Percent(400),
+        minAmount: '200%',
+        stepAmount: '20%',
         duration: {
           times: 'None',
           turns: 1,
@@ -318,8 +330,8 @@ export const s001: ServantStaticData = {
   noblePhantasm: {
     cardType: 'Arts',
     name: 'Lord Chaldeas D',
-    minDamagePlus: new Percent(0),
-    maxDamagePlus: new Percent(0),
+    minDamagePlus: '0%',
+    maxDamagePlus: '0%',
     numOfHits: 0,
     targets: 'None',
     effects: [
@@ -341,11 +353,11 @@ export const s001: ServantStaticData = {
       {
         type: 'IncreaseDefense',
         target: 'AllAllies',
-        amount1: new Percent(30),
-        amount2: new Percent(35),
-        amount3: new Percent(40),
-        amount4: new Percent(45),
-        amount5: new Percent(50),
+        amount1: '30%',
+        amount2: '35%',
+        amount3: '40%',
+        amount4: '45%',
+        amount5: '50%',
         duration: {
           times: 'None',
           turns: 3,

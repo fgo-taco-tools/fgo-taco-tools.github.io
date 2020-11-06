@@ -1,9 +1,30 @@
-import { Percent } from '@/models/Percent';
 import { ServantStaticData } from '@/models/ServantStaticData';
 
 export const s222: ServantStaticData = {
   id: 222,
   name: 'Mysterious Heroine XX',
+  japaneseName: '謎のヒロインＸＸ',
+  otherNames: ['MHXX', 'Mysterious Heroine X (Foreigner)', 'Summer MHX'],
+  referenceData: {
+    region: 'Servant Universe',
+    source: 'Cosmo Guardian Trilogy',
+    series: 'Fate/Grand Order',
+    voiceActor: 'Kawasumi Ayako',
+    illustrator: 'BUNBUN',
+    growthCurve: 'ReverseS',
+    releaseDateJapan: new Date('2018-08-16'),
+    releaseDateNA: new Date('2020-08-09'),
+    height: 154,
+    weight: 48,
+    stats: {
+      agility: 'B',
+      endurance: 'B',
+      luck: 'D',
+      mana: 'E',
+      np: 'EX',
+      strength: 'B',
+    },
+  },
   rarity: 'SuperRare',
   class: 'Foreigner',
   baseAtk: 1625,
@@ -25,7 +46,7 @@ export const s222: ServantStaticData = {
   npPerHit: 0.64,
   npWhenAttacked: 3,
   starAbsorption: 147,
-  starGenerationPerHit: new Percent(15),
+  starGenerationPerHit: '15%',
   passiveSkills: [
     {
       name: 'Entity of the Outer Realm D',
@@ -36,7 +57,7 @@ export const s222: ServantStaticData = {
         },
         {
           type: 'IncreaseDebuffResist',
-          amount: new Percent(4),
+          amount: '4%',
         },
       ],
     },
@@ -45,7 +66,7 @@ export const s222: ServantStaticData = {
       effect: [
         {
           type: 'IncreaseCritStarDropRate',
-          amount: new Percent(8),
+          amount: '8%',
         },
       ],
     },
@@ -54,7 +75,7 @@ export const s222: ServantStaticData = {
       effect: [
         {
           type: 'IncreaseCritStrength',
-          amount: new Percent(10),
+          amount: '10%',
         },
       ],
     },
@@ -63,7 +84,7 @@ export const s222: ServantStaticData = {
       effect: [
         {
           type: 'QuickCardEffectiveness',
-          amount: new Percent(10),
+          amount: '10%',
         },
       ],
     },
@@ -77,7 +98,6 @@ export const s222: ServantStaticData = {
         target: 'Self',
         minAmount: 0,
         stepAmount: 0,
-        maxAmount: 0,
         duration: {
           times: 'None',
           turns: 1,
@@ -86,9 +106,8 @@ export const s222: ServantStaticData = {
       {
         type: 'AttackUp',
         target: 'Self',
-        minAmount: new Percent(30),
-        stepAmount: new Percent(2),
-        maxAmount: new Percent(50),
+        minAmount: '30%',
+        stepAmount: '2%',
         duration: {
           times: 'None',
           turns: 1,
@@ -105,7 +124,6 @@ export const s222: ServantStaticData = {
         target: 'Self',
         minAmount: 10,
         stepAmount: 1,
-        maxAmount: 20,
         duration: {
           times: 'None',
           turns: 'None',
@@ -114,9 +132,8 @@ export const s222: ServantStaticData = {
       {
         type: 'DecreaseCritStarGatherRate',
         target: 'Self',
-        minAmount: new Percent(50),
-        stepAmount: new Percent(5),
-        maxAmount: new Percent(100),
+        minAmount: '50%',
+        stepAmount: '5%',
         duration: {
           times: 'None',
           turns: 1,
@@ -133,7 +150,6 @@ export const s222: ServantStaticData = {
         target: 'Self',
         minAmount: 0,
         stepAmount: 0,
-        maxAmount: 0,
         duration: {
           times: 'None',
           turns: 1,
@@ -144,7 +160,6 @@ export const s222: ServantStaticData = {
         target: 'Self',
         minAmount: 20,
         stepAmount: 1,
-        maxAmount: 30,
         duration: {
           times: 'None',
           turns: 'None',
@@ -153,9 +168,8 @@ export const s222: ServantStaticData = {
       {
         type: 'SpecialAttack',
         target: 'Self',
-        minAmount: new Percent(30),
-        stepAmount: new Percent(2),
-        maxAmount: new Percent(50),
+        minAmount: '30%',
+        stepAmount: '2%',
         targetTrait: 'ThreatToHumanity',
         duration: {
           times: 'None',
@@ -167,8 +181,8 @@ export const s222: ServantStaticData = {
   noblePhantasm: {
     cardType: 'Arts',
     name: 'Etherspace, Yet Lawful EX',
-    minDamagePlus: new Percent(900),
-    maxDamagePlus: new Percent(1500),
+    minDamagePlus: '900%',
+    maxDamagePlus: '1500%',
     numOfHits: 4,
     targets: 'SingleTarget',
     effects: [
@@ -176,11 +190,11 @@ export const s222: ServantStaticData = {
         type: 'SpecialAttack',
         target: 'Self',
         targetTrait: 'Saber',
-        amount1: new Percent(150),
-        amount2: new Percent(150),
-        amount3: new Percent(150),
-        amount4: new Percent(150),
-        amount5: new Percent(150),
+        amount1: '150%',
+        amount2: '150%',
+        amount3: '150%',
+        amount4: '150%',
+        amount5: '150%',
         duration: {
           times: 1,
           turns: 'None',
@@ -191,11 +205,11 @@ export const s222: ServantStaticData = {
       {
         type: 'AttackUp',
         target: 'Self',
-        amount1: new Percent(20),
-        amount2: new Percent(30),
-        amount3: new Percent(40),
-        amount4: new Percent(50),
-        amount5: new Percent(60),
+        amount1: '20%',
+        amount2: '30%',
+        amount3: '40%',
+        amount4: '50%',
+        amount5: '60%',
         duration: {
           times: 'None',
           turns: 1,
