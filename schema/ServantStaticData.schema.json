@@ -22,7 +22,6 @@
             "enum": [
                 "Arts",
                 "Buster",
-                "Other",
                 "Quick"
             ],
             "type": "string"
@@ -70,34 +69,18 @@
                 "duration": {
                     "$ref": "#/definitions/Duration"
                 },
-                "maxAmount": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/definitions/Percent"
-                        },
-                        {
-                            "type": "number"
-                        }
-                    ]
-                },
                 "minAmount": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/definitions/Percent"
-                        },
-                        {
-                            "type": "number"
-                        }
+                    "pattern": "^\\d+(\\.\\d+)?%$",
+                    "type": [
+                        "string",
+                        "number"
                     ]
                 },
                 "stepAmount": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/definitions/Percent"
-                        },
-                        {
-                            "type": "number"
-                        }
+                    "pattern": "^\\d+(\\.\\d+)?%$",
+                    "type": [
+                        "string",
+                        "number"
                     ]
                 },
                 "target": {
@@ -107,6 +90,7 @@
                     "enum": [
                         "ArgoRelated",
                         "Arthur",
+                        "Balanced",
                         "Beast",
                         "BrynhildrsBeloved",
                         "Chaotic",
@@ -126,8 +110,7 @@
                         "Lawful",
                         "LivingHuman",
                         "Male",
-                        "NeutralGood",
-                        "NeutralLaw",
+                        "Neutral",
                         "OtherSex",
                         "PseudoServants",
                         "Riding",
@@ -158,10 +141,10 @@
                     "type": "array"
                 },
                 "maxDamagePlus": {
-                    "$ref": "#/definitions/Percent"
+                    "type": "string"
                 },
                 "minDamagePlus": {
-                    "$ref": "#/definitions/Percent"
+                    "type": "string"
                 },
                 "name": {
                     "type": "string"
@@ -184,53 +167,38 @@
         "NoblePhantasmEffect": {
             "properties": {
                 "amount1": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/definitions/Percent"
-                        },
-                        {
-                            "type": "number"
-                        }
+                    "pattern": "^\\d+(\\.\\d+)?%$",
+                    "type": [
+                        "string",
+                        "number"
                     ]
                 },
                 "amount2": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/definitions/Percent"
-                        },
-                        {
-                            "type": "number"
-                        }
+                    "pattern": "^\\d+(\\.\\d+)?%$",
+                    "type": [
+                        "string",
+                        "number"
                     ]
                 },
                 "amount3": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/definitions/Percent"
-                        },
-                        {
-                            "type": "number"
-                        }
+                    "pattern": "^\\d+(\\.\\d+)?%$",
+                    "type": [
+                        "string",
+                        "number"
                     ]
                 },
                 "amount4": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/definitions/Percent"
-                        },
-                        {
-                            "type": "number"
-                        }
+                    "pattern": "^\\d+(\\.\\d+)?%$",
+                    "type": [
+                        "string",
+                        "number"
                     ]
                 },
                 "amount5": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/definitions/Percent"
-                        },
-                        {
-                            "type": "number"
-                        }
+                    "pattern": "^\\d+(\\.\\d+)?%$",
+                    "type": [
+                        "string",
+                        "number"
                     ]
                 },
                 "duration": {
@@ -243,6 +211,7 @@
                     "enum": [
                         "ArgoRelated",
                         "Arthur",
+                        "Balanced",
                         "Beast",
                         "BrynhildrsBeloved",
                         "Chaotic",
@@ -262,8 +231,7 @@
                         "Lawful",
                         "LivingHuman",
                         "Male",
-                        "NeutralGood",
-                        "NeutralLaw",
+                        "Neutral",
                         "OtherSex",
                         "PseudoServants",
                         "Riding",
@@ -307,13 +275,10 @@
         "PassiveSkillEffect": {
             "properties": {
                 "amount": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/definitions/Percent"
-                        },
-                        {
-                            "type": "number"
-                        }
+                    "pattern": "^\\d+(\\.\\d+)?%$",
+                    "type": [
+                        "string",
+                        "number"
                     ]
                 },
                 "battlefield": {
@@ -325,21 +290,6 @@
                 },
                 "type": {
                     "$ref": "#/definitions/SkillEffectType"
-                }
-            },
-            "type": "object"
-        },
-        "Percent": {
-            "properties": {
-                "Value": {
-                    "type": "number"
-                },
-                "rawValue": {
-                    "type": "number"
-                },
-                "value": {
-                    "description": "Returns value as a modifier, e.g. 40% will be 0.4",
-                    "type": "number"
                 }
             },
             "type": "object"
@@ -398,6 +348,16 @@
             },
             "type": "object"
         },
+        "ServantGrowthCurve": {
+            "enum": [
+                "Linear",
+                "ReverseS",
+                "S",
+                "SemiReverseS",
+                "SemiS"
+            ],
+            "type": "string"
+        },
         "ServantRarity": {
             "enum": [
                 "AngryMang",
@@ -408,6 +368,91 @@
                 "Uncommon"
             ],
             "type": "string"
+        },
+        "ServantReferenceData": {
+            "properties": {
+                "growthCurve": {
+                    "$ref": "#/definitions/ServantGrowthCurve"
+                },
+                "height": {
+                    "type": "number"
+                },
+                "illustrator": {
+                    "type": "string"
+                },
+                "region": {
+                    "type": "string"
+                },
+                "releaseDateJapan": {
+                    "anyOf": [
+                        {
+                            "description": "Enables basic storage and retrieval of dates and times.",
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        {
+                            "enum": [
+                                "Game Launch"
+                            ],
+                            "type": "string"
+                        }
+                    ]
+                },
+                "releaseDateNA": {
+                    "anyOf": [
+                        {
+                            "description": "Enables basic storage and retrieval of dates and times.",
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        {
+                            "enum": [
+                                "Game Launch"
+                            ],
+                            "type": "string"
+                        }
+                    ]
+                },
+                "series": {
+                    "type": "string"
+                },
+                "source": {
+                    "type": "string"
+                },
+                "stats": {
+                    "$ref": "#/definitions/ServantStats"
+                },
+                "voiceActor": {
+                    "type": "string"
+                },
+                "weight": {
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "ServantStats": {
+            "properties": {
+                "agility": {
+                    "type": "string"
+                },
+                "endurance": {
+                    "type": "string"
+                },
+                "luck": {
+                    "type": "string"
+                },
+                "mana": {
+                    "type": "string"
+                },
+                "np": {
+                    "type": "string"
+                },
+                "strength": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
         },
         "ServantUpgrades": {
             "properties": {
@@ -718,6 +763,9 @@
         "instantDeathChance": {
             "type": "number"
         },
+        "japaneseName": {
+            "type": "string"
+        },
         "maxAtk": {
             "type": "number"
         },
@@ -736,6 +784,12 @@
         "npWhenAttacked": {
             "type": "number"
         },
+        "otherNames": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
         "passiveSkills": {
             "items": {
                 "$ref": "#/definitions/PassiveSkill"
@@ -744,6 +798,9 @@
         },
         "rarity": {
             "$ref": "#/definitions/ServantRarity"
+        },
+        "referenceData": {
+            "$ref": "#/definitions/ServantReferenceData"
         },
         "skillMats": {
             "items": {
@@ -971,17 +1028,22 @@
             },
             "type": "array"
         },
+        "spoilerName": {
+            "type": "string"
+        },
         "starAbsorption": {
             "type": "number"
         },
         "starGenerationPerHit": {
-            "$ref": "#/definitions/Percent"
+            "pattern": "^\\d+(\\.\\d+)?%$",
+            "type": "string"
         },
         "traits": {
             "items": {
                 "enum": [
                     "ArgoRelated",
                     "Arthur",
+                    "Balanced",
                     "Beast",
                     "BrynhildrsBeloved",
                     "Chaotic",
@@ -1001,8 +1063,7 @@
                     "Lawful",
                     "LivingHuman",
                     "Male",
-                    "NeutralGood",
-                    "NeutralLaw",
+                    "Neutral",
                     "OtherSex",
                     "PseudoServants",
                     "Riding",
